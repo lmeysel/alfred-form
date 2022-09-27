@@ -1,0 +1,96 @@
+{
+  "name": "alfred-form",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "type": "module",
+  "main": "dist/alfred-form.umd.cjs",
+  "module": "dist/alfred-form.js",
+  "exports": {
+    ".": {
+      "import": "./dist/alfred-form.js",
+      "require": "./dist/alfred-form.umd.cjs"
+    }
+  },
+  "typings": "dist/types/alfred-form.d.ts",
+  "files": [
+    "dist"
+  ],
+  "author": "lmeysel <lmeysel@noreply.github.com>",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "scripts": {
+    "lint": "eslint --fix src/**/*.ts test/**/*.ts",
+    "prebuild": "rimraf dist docs",
+    "build": "pnpm run build:compile && pnpm run build:docs",
+    "build:compile": "vite build",
+    "build:docs": "typedoc --tsconfig tsconfig.lib.json --out docs src/alfred-form.ts",
+    "test": "vitest run --coverage",
+    "test:watch": "vitest watch --coverage",
+    "test:prod": "pnpm lint && pnpm test",
+    "commit": "cz",
+    "dev": "vite",
+    "precommit": "lint-staged",
+    "postinstall": "lefthook install"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.3",
+    "@commitlint/config-conventional": "^17.6.3",
+    "@inertiajs/inertia": "^0.11.1",
+    "@inertiajs/inertia-vue3": "^0.6.0",
+    "@types/node": "^18.16.5",
+    "@types/shelljs": "^0.8.12",
+    "@typescript-eslint/eslint-plugin": "^5.59.2",
+    "@typescript-eslint/parser": "^5.59.2",
+    "@vitejs/plugin-vue": "^3.2.0",
+    "@vitejs/plugin-vue-jsx": "^2.1.1",
+    "@vitest/coverage-c8": "^0.23.4",
+    "@vue/test-utils": "^2.3.2",
+    "commitizen": "^4.3.0",
+    "cross-env": "^7.0.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "enquirer": "^2.3.6",
+    "eslint": "^8.40.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^9.11.0",
+    "happy-dom": "^6.0.4",
+    "kleur": "^4.1.5",
+    "lefthook": "^1.3.12",
+    "lint-staged": "^13.2.2",
+    "lodash.camelcase": "^4.3.0",
+    "prettier": "^2.8.8",
+    "replace-in-file": "^6.3.5",
+    "rimraf": "^3.0.2",
+    "semantic-release": "^19.0.5",
+    "shelljs": "^0.8.5",
+    "tslib": "^2.5.0",
+    "typedoc": "^0.23.28",
+    "typescript": "^4.9.5",
+    "vite": "^3.2.6",
+    "vite-plugin-dts": "^1.7.3",
+    "vitest": "^0.23.4",
+    "vue": "^3.2.47"
+  },
+  "peerDependencies": {
+    "@inertiajs/inertia": "^0.11.0",
+    "@inertiajs/inertia-vue3": "^0.6.0",
+    "vue": "^3.2.39"
+  }
+}
