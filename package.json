@@ -36,8 +36,7 @@
     "test:prod": "pnpm lint && pnpm test",
     "commit": "cz",
     "dev": "vite",
-    "precommit": "lint-staged",
-    "postinstall": "lefthook install"
+    "precommit": "lint-staged"
   },
   "config": {
     "commitizen": {
