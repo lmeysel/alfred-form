@@ -1,5 +1,5 @@
 export interface FormFieldModel<T = any> {
-  error: string | undefined;
+  error: string | null;
   value: T;
 }
 export interface FormField<T = any> {
@@ -13,7 +13,7 @@ export interface FormElementModel<T = any> {
   readonly identifier: string;
   readonly label: string;
   readonly helptext: string | null;
-  readonly error: string;
+  readonly error: string | null;
   readonly required: boolean;
   value: T;
 }

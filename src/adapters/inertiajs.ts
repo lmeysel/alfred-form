@@ -29,7 +29,7 @@ export class InertiaFormAdapter<T extends FormValues = FormValues> implements Fo
     const { form } = this;
     const model: FormFieldModel = {
       get error() {
-        return form.errors[key];
+        return form.errors[key] ?? null;
       },
       get value() {
         return form[key as keyof T];
