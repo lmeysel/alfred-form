@@ -7,7 +7,7 @@ import Dts from 'vite-plugin-dts';
 export default defineConfig({
   plugins: [Dts({ outputDir: 'dist/types' }), Vue(), VueJSX()],
   test: {
-    coverage: { provider: 'c8', include: ['src'] },
+    coverage: { provider: 'c8', include: ['src'], reporter: ['text', 'lcov', 'html', 'clover', 'json'] },
     environment: 'happy-dom',
     globals: true,
   },
