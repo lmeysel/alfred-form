@@ -1,6 +1,8 @@
 name: Node.js CI
 
 on: ['push', 'pull_request']
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -40,7 +42,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Deploy docs
-        uses: JamesIves/github-pages-deploy-action@4.1.1
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
           folder: docs
