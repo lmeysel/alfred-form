@@ -3,8 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@commitlint/cli': ^17.6.3
   '@commitlint/config-conventional': ^17.6.3
-  '@inertiajs/inertia': ^0.11.1
-  '@inertiajs/inertia-vue3': ^0.6.0
+  '@inertiajs/vue3': ^1.0.7
   '@types/node': ^18.16.5
   '@types/shelljs': ^0.8.12
   '@typescript-eslint/eslint-plugin': ^5.59.2
@@ -42,8 +41,7 @@ specifiers:
 devDependencies:
   '@commitlint/cli': 17.6.3
   '@commitlint/config-conventional': 17.6.3
-  '@inertiajs/inertia': 0.11.1
-  '@inertiajs/inertia-vue3': 0.6.0_mt7yq7fh6ek3aalj56g3ut3g2a
+  '@inertiajs/vue3': 1.0.7_vue@3.2.47
   '@types/node': 18.16.5
   '@types/shelljs': 0.8.12
   '@typescript-eslint/eslint-plugin': 5.59.2_fwbwffxiq4bvaw374ga4sdje4y
@@ -646,24 +644,26 @@ packages:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
 
-  /@inertiajs/inertia-vue3/0.6.0_mt7yq7fh6ek3aalj56g3ut3g2a:
-    resolution: {integrity: sha512-qhPBtd/G0VS7vVVbYw1rrqKB6JqRusxqt+5ec2GLmK6t7fTlBBnZ3KsakmGZLSM1m1OGkNcfn4ifmCk3zfA8RQ==}
+  /@inertiajs/core/1.0.7:
+    resolution: {integrity: sha512-hb9XP+TVNdYoI3+3dx2Myp16w/WmqDCvTMl0o8SfFG6xSAJItihytrm0BJUNkV1PnId1qp0RUswOFZ8I8u3hzg==}
+    dependencies:
+      axios: 1.4.0
+      deepmerge: 4.3.1
+      nprogress: 0.2.0
+      qs: 6.11.1
+    transitivePeerDependencies:
+      - debug
+    dev: true
+
+  /@inertiajs/vue3/1.0.7_vue@3.2.47:
+    resolution: {integrity: sha512-WEQEsgYiEWCzLo3EmgK6UsujfO/q2CI1Dc6/iD55/JoS+RHqkNMbryteuBiwd56+6al+gBgzLYSlSYMBfEcHMg==}
     peerDependencies:
-      '@inertiajs/inertia': ^0.11.0
       vue: ^3.0.0
     dependencies:
-      '@inertiajs/inertia': 0.11.1
+      '@inertiajs/core': 1.0.7
       lodash.clonedeep: 4.5.0
       lodash.isequal: 4.5.0
       vue: 3.2.47
-    dev: true
-
-  /@inertiajs/inertia/0.11.1:
-    resolution: {integrity: sha512-btmV53c54oW4Z9XF0YyTdIUnM7ue0ONy3/KJOz6J1C5CYIwimiKfDMpz8ZbGJuxS+SPdOlNsqj2ZhlHslpJRZg==}
-    dependencies:
-      axios: 0.21.4
-      deepmerge: 4.3.1
-      qs: 6.11.1
     transitivePeerDependencies:
       - debug
     dev: true
@@ -1652,10 +1652,12 @@ packages:
     engines: {node: '>= 4.0.0'}
     dev: true
 
-  /axios/0.21.4:
-    resolution: {integrity: sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==}
+  /axios/1.4.0:
+    resolution: {integrity: sha512-S4XCWMEmzvo64T9GfvQDOXgYRDJ/wsSZc7Jvdgx5u1sd0JwsuPLqb3SYmusag+edF6ziyMensPVqLTSc1PiSEA==}
     dependencies:
       follow-redirects: 1.15.2
+      form-data: 4.0.0
+      proxy-from-env: 1.1.0
     transitivePeerDependencies:
       - debug
     dev: true
@@ -2938,6 +2940,15 @@ packages:
   /form-data/2.5.1:
     resolution: {integrity: sha512-m21N3WOmEEURgk6B9GLOE4RuWOFf28Lhh9qGYeNlGq4VDXUlJy2th2slBNU8Gp8EzloYZOibZJ7t5ecIrFSjVA==}
     engines: {node: '>= 0.12'}
+    dependencies:
+      asynckit: 0.4.0
+      combined-stream: 1.0.8
+      mime-types: 2.1.35
+    dev: true
+
+  /form-data/4.0.0:
+    resolution: {integrity: sha512-ETEklSGi5t0QMZuiXoA/Q6vcnxcLQP5vdugSpuAyi6SVGi2clPPp+xgEhuMaHC+zGgn31Kd235W35f7Hykkaww==}
+    engines: {node: '>= 6'}
     dependencies:
       asynckit: 0.4.0
       combined-stream: 1.0.8
@@ -4306,6 +4317,10 @@ packages:
       - which
       - write-file-atomic
 
+  /nprogress/0.2.0:
+    resolution: {integrity: sha512-I19aIingLgR1fmhftnbWWO3dXc0hSxqHQHQb3H8m+K3TnEn/iSeTZZOyvKXWqQESMwuUVnatlCnZdLBZZt2VSA==}
+    dev: true
+
   /nth-check/2.1.1:
     resolution: {integrity: sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==}
     dependencies:
@@ -4613,6 +4628,10 @@ packages:
 
   /proto-list/1.2.4:
     resolution: {integrity: sha512-vtK/94akxsTMhe0/cbfpR+syPuszcuwhqVjJq26CuNDgFGj682oRBXOP5MJpv2r7JtE8MsiepGIqvvOTBwn2vA==}
+    dev: true
+
+  /proxy-from-env/1.1.0:
+    resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
     dev: true
 
   /pseudomap/1.0.2:

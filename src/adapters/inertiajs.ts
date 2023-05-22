@@ -1,4 +1,4 @@
-import { InertiaForm, useForm } from '@inertiajs/inertia-vue3';
+import { InertiaForm, useForm } from '@inertiajs/vue3';
 import { FormField, FormFieldModel } from '../interfaces/form-field';
 import { FormModel } from '../interfaces/form-model';
 import { FormErrors, FormValues } from '../types';
