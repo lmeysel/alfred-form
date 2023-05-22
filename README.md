@@ -1,7 +1,7 @@
-[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg?style=flat-square&logo=prettier)](https://github.com/prettier/prettier)
 ![GitHub Actions](https://img.shields.io/github/actions/workflow/status/lmeysel/alfred-form/nodejs.yml?style=flat-square&logo=github)
 [![Coveralls](https://img.shields.io/coveralls/lmeysel/alfred-form.svg?style=flat-square&logo=coveralls)](https://coveralls.io/github/lmeysel/alfred-form)
-[![Donate](https://img.shields.io/badge/donate-paypal-blue.svg?style=flat-square)](https://paypal.me/lmeysel)
+[![Donate](https://img.shields.io/badge/donate-paypal-blue.svg?style=flat-square&logo=paypal)](https://paypal.me/lmeysel)
 
 # Getting started
 
