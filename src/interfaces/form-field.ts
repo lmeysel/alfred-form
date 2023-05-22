@@ -1,5 +1,5 @@
 export interface FormFieldModel<T = any> {
-  error: string;
+  error: string | undefined;
   value: T;
 }
 export interface FormField<T = any> {
