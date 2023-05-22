@@ -7,7 +7,7 @@ import Dts from 'vite-plugin-dts';
 export default defineConfig({
   plugins: [Dts({ outputDir: 'dist/types' }), Vue(), VueJSX()],
   test: {
-    coverage: { include: ['src'] },
+    coverage: { provider: 'c8', include: ['src'] },
     environment: 'happy-dom',
     globals: true,
   },
@@ -21,9 +21,9 @@ export default defineConfig({
     rollupOptions: {
       // see: https://vitejs.dev/guide/build.html#library-mode
       // define external dependencies here
-      external: ['vue', '@inertiajs/inertia', '@inertiajs/inertia-vue3'],
+      external: ['vue', '@inertiajs/vue3'],
       output: {
-        globals: { vue: 'vue', '@inertiajs/inertia-vue3': 'inertiaVue3' },
+        globals: { vue: 'vue', '@inertiajs/vue3': 'inertiaVue3' },
       },
     },
   },
