@@ -85,9 +85,11 @@ export function createFormContext<T extends FormValues>({
         }
       }
       form.clearErrors();
-      const maybePromise = submitHandler(values, form);
-      if (maybePromise instanceof Promise) {
-        await maybePromise;
+      if (submitHandler) {
+        const maybePromise = submitHandler(values, form);
+        if (maybePromise instanceof Promise) {
+          await maybePromise;
+        }
       }
       form.store();
     } catch (x) {

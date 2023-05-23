@@ -6,7 +6,7 @@ import { ValidationAutoRuleBuilder, ValidationRuleBuilder } from './validation';
 export interface CreateFormContextOptions<T extends FormValues> extends Partial<Omit<PluginOptions, 'translate'>> {
   values: T;
   i18nBase?: string;
-  submitHandler(values: T, form: FormModel<T>): void | Promise<void>;
+  submitHandler?(values: T, form: FormModel<T>): void | Promise<void>;
 }
 
 export interface UpdateFormContextOptions {
